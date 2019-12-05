@@ -1,0 +1,17 @@
+var format = function(text) {
+  if (!text) {
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g')
+  var text = text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+  // var text = text.replace('↵', '\n')
+  return text
+}
+
+var limit = function(array, length) {
+  return array.slice(0, length)
+}
+module.exports = {
+  format: format,
+  limit: limit
+}

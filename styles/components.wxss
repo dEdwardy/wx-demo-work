@@ -1,0 +1,384 @@
+/* ==================
+         轮播
+ ==================== */
+
+.screen-swiper {
+  min-height: 375rpx;
+}
+
+.screen-swiper image, .screen-swiper video, .swiper-item image,
+.swiper-item video {
+  width: 100%;
+  display: block;
+  height: 100%;
+  margin: 0;
+  pointer-events: none;
+}
+
+swiper .a-swiper-dot {
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+swiper[class*="-dot"] .wx-swiper-dots {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+swiper.square-dot .wx-swiper-dot {
+  background-color: var(--white);
+  opacity: 0.4;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 20rpx;
+  margin: 0 8rpx !important;
+}
+
+swiper.square-dot .wx-swiper-dot.wx-swiper-dot-active {
+  opacity: 1;
+  width: 30rpx;
+}
+
+swiper.round-dot .wx-swiper-dot {
+  width: 10rpx;
+  height: 10rpx;
+  position: relative;
+  margin: 4rpx 8rpx !important;
+}
+
+swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active::after {
+  content: "";
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: var(--white);
+  border-radius: 20rpx;
+}
+
+swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
+  width: 18rpx;
+  height: 18rpx;
+}
+
+/* ==================
+         tab
+ ==================== */
+
+.tab-container {
+  white-space: nowrap;
+}
+
+.tab-item {
+  height: 90rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  margin: 0 10rpx;
+  padding: 0 20rpx;
+}
+.tab-item.current{
+  color: var(--theme);
+  border-bottom: 4rpx solid;
+} 
+/* ==================
+         form
+ ==================== */
+
+.form-group {
+	background-color: var(--white);
+	padding: 1rpx 30rpx;
+	display: flex;
+	align-items: center;
+	min-height: 100rpx;
+	justify-content: space-between;
+}
+
+.form-group+.form-group {
+	border-top: 1rpx solid #eee;
+}
+
+.form-group .title {
+	text-align: justify;
+	padding-right: 30rpx;
+	font-size: 30rpx;
+	position: relative;
+	height: 60rpx;
+	line-height: 60rpx;
+}
+
+.form-group input {
+	flex: 1;
+	font-size: 30rpx;
+	color: #555;
+	padding-right: 20rpx;
+}
+/* //000 */
+.form-group>text[class*="cuIcon-"] {
+	font-size: 36rpx;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.form-group textarea {
+	margin: 32rpx 0 30rpx;
+	height: 4.6em;
+	width: 100%;
+	line-height: 1.2em;
+	flex: 1;
+	font-size: 28rpx;
+	padding: 0;
+}
+
+.form-group.align-start .title {
+	height: 1em;
+	margin-top: 32rpx;
+	line-height: 1em;
+}
+
+.form-group picker {
+	flex: 1;
+	padding-right: 40rpx;
+	overflow: hidden;
+	position: relative;
+}
+
+.form-group picker .picker {
+	line-height: 100rpx;
+	font-size: 28rpx;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+	text-align: right;
+}
+
+.form-group picker::after {
+  transform: rotate(-90deg);
+	font-family: "iconfont";
+	display: block;
+  content: "\eb81";
+	position: absolute;
+	font-size: 32rpx;
+	color: var(--grey);
+	line-height: 100rpx;
+	width: 60rpx;
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	right: -16rpx;
+	margin: auto;
+}
+
+.form-group textarea[disabled],
+.form-group textarea[disabled] .placeholder {
+	color: transparent;
+}
+.align-start {
+  align-items: flex-start;
+}
+/* ==================
+         开关
+ ==================== */
+
+switch,
+checkbox,
+radio {
+	position: relative;
+}
+
+switch::after,
+switch::before {
+	font-family: "iconfont";
+  /* content: "\eb7b"; */
+	position: absolute;
+	color: var(--white) !important;
+	top: 0%;
+	left: 0rpx;
+	font-size: 26rpx;
+	line-height: 26px;
+	width: 50%;
+	text-align: center;
+	pointer-events: none;
+	transform: scale(0, 0);
+	transition: all 0.3s ease-in-out 0s;
+	z-index: 9;
+	bottom: 0;
+	height: 26px;
+	margin: auto;
+}
+
+switch::before {
+  /* content: "\eb7b"; */
+	right: 0;
+	transform: scale(1, 1);
+	left: auto;
+}
+
+switch[checked]::after,
+switch.checked::after {
+	transform: scale(1, 1);
+}
+
+switch[checked]::before,
+switch.checked::before {
+	transform: scale(0, 0);
+}
+
+switch[checked]::before {
+	transform: scale(0, 0);
+}
+
+radio::before,
+checkbox::before {
+	font-family: "iconfont";
+  content: "\eb81";
+  transform: rotate(-16deg);
+	position: absolute;
+	color: var(--white) !important;
+	top: 50%;
+	margin-top: -8px;
+	right: 5px;
+	font-size: 32rpx;
+	line-height: 16px;
+	pointer-events: none;
+	/* transform: scale(1, 1); */
+	transition: all 0.3s ease-in-out 0s;
+	z-index: 9;
+}
+
+radio .wx-radio-input,
+checkbox .wx-checkbox-input {
+	margin: 0;
+	width: 24px;
+	height: 24px;
+}
+
+checkbox.round .wx-checkbox-input {
+	border-radius: 100rpx;
+}
+
+switch .wx-switch-input {
+	border: none;
+	padding: 0 24px;
+	width: 48px;
+	height: 26px;
+	margin: 0;
+	border-radius: 100rpx;
+}
+
+switch .wx-switch-input::after {
+	margin: auto;
+	width: 26px;
+	height: 26px;
+	border-radius: 100rpx;
+	left: 0rpx;
+	top: 0rpx;
+	bottom: 0rpx;
+	position: absolute;
+	transform: scale(0.9, 0.9);
+	transition: all 0.1s ease-in-out 0s;
+}
+
+switch .wx-switch-input.wx-switch-input-checked::after {
+	margin: auto;
+	left: 22px;
+	box-shadow: none;
+	transform: scale(0.9, 0.9);
+}
+
+radio-group {
+	display: inline-block;
+}
+
+
+
+switch.radius .wx-switch-input::after,
+switch.radius .wx-switch-input,
+switch.radius .wx-switch-input::before {
+	border-radius: 10rpx;
+}
+
+switch .wx-switch-input::before,
+radio.radio::before,
+checkbox .wx-checkbox-input::before,
+radio .wx-radio-input::before,
+radio.radio::before {
+	display: none;
+}
+
+radio.radio[checked]::after {
+	content: "";
+	background-color: transparent;
+	display: block;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	z-index: 999;
+	top: 0rpx;
+	left: 0rpx;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 200rpx;
+	border: 8px solid var(--white) !important;
+}
+
+switch.theme[checked] .wx-switch-input,
+checkbox.theme[checked] .wx-checkbox-input,
+radio.theme[checked] .wx-radio-input {
+	border-color: var(--theme) !important;
+}
+
+switch.theme[checked] .wx-switch-input,
+checkbox.theme[checked] .wx-checkbox-input,
+radio.theme[checked] .wx-radio-input {
+	background-color: var(--theme) !important;
+	color: var(--white) !important;
+}
+
+.icon-img {
+  font-size: 52rpx;
+	position: relative;
+	color: var(--grey);
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  height: 173rpx;
+}
+.icon-img::before{
+  font-family: 'iconfont';
+  content: "\eb7e";
+}
+.tag {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 6rpx;
+  padding: 6rpx 12rpx;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 24rpx;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}

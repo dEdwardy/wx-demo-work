@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/form/form",
+    "pages/basics/basics",
+    "pages/tab/tab",
+    "pages/my/my",
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "framework",
+    "navigationStyle":"default",
+    "enablePullDownRefresh":true
+  },
+  
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "color": "#c7c7c7",
+    "list": [
+      {
+        "pagePath": "pages/basics/basics",
+        "selectedIconPath": "/images/tab/classic@highlight.png",
+        "iconPath": "/images/tab/classic.png",
+        "text": "功能列表"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "selectedIconPath": "/images/tab/book@highlight.png",
+        "iconPath": "/images/tab/book.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+  
+}

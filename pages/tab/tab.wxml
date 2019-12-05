@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- 1 -->
+  <view class="bg-white padding-sm solid-bottom">1.滚动</view>
+  <scroll-view scroll-x class="tab-container bg-white" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{index==TabCur?'current':''}}" wx:for="{{10}}" wx:key="*this" bindtap="tabSelect" data-id="{{index}}">Tab{{index}}</view>
+  </scroll-view>
+  <!-- 2 -->
+  <view class="bg-white padding-sm solid-bottom margin-top-sm">2.平分</view>
+  <scroll-view scroll-x class="tab-container bg-white">
+    <view class="flex text-center">
+      <view class="tab-item flex-sub {{index==TabCur?'current':''}}" wx:for="{{4}}" wx:key="*this" bindtap="tabSelect" data-id="{{index}}">
+        Tab{{index}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 3 -->
+  <view class="bg-white padding-sm solid-bottom margin-top-sm">3.居中</view>
+  <scroll-view scroll-x class=" tab-container bg-white text-center">
+    <view class="tab-item {{index==TabCur?'current':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      Tab{{index}}
+    </view>
+  </scroll-view>
+</view>

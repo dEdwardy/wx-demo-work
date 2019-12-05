@@ -1,0 +1,20 @@
+<view class="container">
+  <!-- 轮播 -->
+  <!--指示点:1.square-dot 2.round-dot -->
+  <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index">
+      <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+      <!-- <video src="{{item.imageUrl}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video> -->
+    </swiper-item>
+  </swiper>
+  <view class="nav-container flex flex-wrap justify-between padding-lr margin-top">
+    <block wx:for="{{navList}}" wx:for-item="navItem" wx:key="index}">
+      <navigator open-type="navigate" hover-class='none' url="/pages/{{navItem.name}}/{{navItem.name}}" class="nav-item text-center padding-sm">
+        <view class="nav-title">{{navItem.title}}</view>
+        <view class="nav-name">{{navItem.name}}</view>
+      </navigator>
+    </block>
+  </view>
+
+
+</view>
